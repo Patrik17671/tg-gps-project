@@ -1,11 +1,11 @@
-import React, { useContext, useState, useEffect, useCallback } from 'react';
+import { useContext, useState, useEffect, useCallback, FC } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Container, Typography, AppBar, Toolbar, Button, Box, Alert } from '@mui/material';
 import { UserContext } from './UserContext';
 import { getCoordinates } from '../api';
 import UserDetailForm from './UserDetailForm';
 
-const UserDetail: React.FC = () => {
+const UserDetail: FC = () => {
 	const { user, setUser } = useContext(UserContext)!;
 	const [coordinates, setCoordinates] = useState<{ lat: number; lon: number } | null>(null);
 	const [successMessage, setSuccessMessage] = useState<string | null>(null);

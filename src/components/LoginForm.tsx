@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import { useState, useContext, FC } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import { TextField, Button, Typography, Container, Box } from '@mui/material';
@@ -25,9 +25,9 @@ interface IFormInput {
 	password: string;
 }
 
-const LoginForm: React.FC = () => {
+const LoginForm: FC = () => {
 	const { control, handleSubmit, formState: { errors } } = useForm<IFormInput>();
-	const [error, setError] = useState('');
+	const [error, setError] = useState<string>('');
 	const { setUser } = useContext(UserContext)!;
 	const history = useHistory();
 
